@@ -1,0 +1,433 @@
+{
+  "info": {
+    "_postman_id": "44694b9f-820e-4986-beaa-5483950abc3d",
+    "name": "Recipes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51662711",
+    "_collection_link": "https://go.postman.co/collection/51662711-44694b9f-820e-4986-beaa-5483950abc3d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create Recipe",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Paneer Butter Masala\",\r\n  \"ingredients\": \"Paneer, Tomato, Butter, Cream, Spices\",\r\n  \"instructions\": \"Cook gravy, add paneer cubes, simmer with cream.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/recipes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "recipes"
+          ]
+        },
+        "description": "Creates a new recipe in the database.\n\nRequest Body:\n\n- title (String): Name of the recipe\n    \n- ingredients (String): List of ingredients required\n    \n- instructions (String): Steps to prepare the recipe\n    \n\nResponse:\n\n- Returns the created recipe object with unique ID, timestamps, and details.\n    \n\nStatus Codes:\n\n- 201: Recipe created successfully\n    \n- 500: Server error"
+      },
+      "response": [
+        {
+          "name": "Create Recipe",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Paneer Butter Masala\",\r\n  \"ingredients\": \"Paneer, Tomato, Butter, Cream, Spices\",\r\n  \"instructions\": \"Cook gravy, add paneer cubes, simmer with cream.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/recipes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recipes"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "271"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"10f-zmRMyQaUcc9YVYtSdT/yyUvnTuA\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 30 Mar 2026 20:14:34 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"title\": \"Paneer Butter Masala\",\n    \"ingredients\": \"Paneer, Tomato, Butter, Cream, Spices\",\n    \"instructions\": \"Cook gravy, add paneer cubes, simmer with cream.\",\n    \"_id\": \"69cad9aa54aa9a7b5a8484ab\",\n    \"createdAt\": \"2026-03-30T20:14:34.575Z\",\n    \"updatedAt\": \"2026-03-30T20:14:34.575Z\",\n    \"__v\": 0\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get all recipes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/recipes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "recipes"
+          ]
+        },
+        "description": "Retrieves all recipes stored in the database.\n\nResponse:\n\n- Returns an array of all recipe objects.\n    \n\nStatus Codes:\n\n- 200: Successfully fetched all recipes\n    \n- 500: Server error"
+      },
+      "response": [
+        {
+          "name": "Get all recipes",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/recipes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recipes"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1003"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"3eb-mf5YdpB+kkietd4Z8vIFgjVUPrc\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 30 Mar 2026 20:22:10 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"_id\": \"69cad7df54aa9a7b5a8484a5\",\n        \"title\": \"Biryani\",\n        \"ingredients\": \"Rice, Chicken\",\n        \"instructions\": \"Cook properly\",\n        \"createdAt\": \"2026-03-30T20:06:55.289Z\",\n        \"updatedAt\": \"2026-03-30T20:06:55.289Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"69cad99554aa9a7b5a8484a7\",\n        \"title\": \"Masala Dosa\",\n        \"ingredients\": \"Rice batter, Potato, Onion, Spices\",\n        \"instructions\": \"Prepare dosa batter, cook dosa, add potato filling.\",\n        \"createdAt\": \"2026-03-30T20:14:13.622Z\",\n        \"updatedAt\": \"2026-03-30T20:14:13.622Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"69cad99b54aa9a7b5a8484a9\",\n        \"title\": \"Veg Fried Rice\",\n        \"ingredients\": \"Rice, Vegetables, Soy sauce, Garlic\",\n        \"instructions\": \"Stir fry vegetables, add rice and sauces, mix well.\",\n        \"createdAt\": \"2026-03-30T20:14:19.378Z\",\n        \"updatedAt\": \"2026-03-30T20:14:19.378Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"69cad9aa54aa9a7b5a8484ab\",\n        \"title\": \"Paneer Butter Masala\",\n        \"ingredients\": \"Paneer, Tomato, Butter, Cream, Spices\",\n        \"instructions\": \"Cook gravy, add paneer cubes, simmer with cream.\",\n        \"createdAt\": \"2026-03-30T20:14:34.575Z\",\n        \"updatedAt\": \"2026-03-30T20:14:34.575Z\",\n        \"__v\": 0\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Get recipe by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/recipes/69cad99b54aa9a7b5a8484a9",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "recipes",
+            "69cad99b54aa9a7b5a8484a9"
+          ]
+        },
+        "description": "Retrieves a single recipe using its unique ID.\n\nURL Parameter:\n\n- id (String): Unique identifier of the recipe\n    \n\nResponse:\n\n- Returns the recipe object matching the given ID.\n    \n\nStatus Codes:\n\n- 200: Recipe found and returned\n    \n- 500: Server error"
+      },
+      "response": [
+        {
+          "name": "Get recipe by ID",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/recipes/69cad99b54aa9a7b5a8484a9",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recipes",
+                "69cad99b54aa9a7b5a8484a9"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "266"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"10a-rwF+4IiGYeVj1k/kR2GsJIwK7c0\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 30 Mar 2026 20:24:48 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"_id\": \"69cad99b54aa9a7b5a8484a9\",\n    \"title\": \"Veg Fried Rice\",\n    \"ingredients\": \"Rice, Vegetables, Soy sauce, Garlic\",\n    \"instructions\": \"Stir fry vegetables, add rice and sauces, mix well.\",\n    \"createdAt\": \"2026-03-30T20:14:19.378Z\",\n    \"updatedAt\": \"2026-03-30T20:14:19.378Z\",\n    \"__v\": 0\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update recipe",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Chicken Biryani Special\",\r\n  \"ingredients\": \"Rice, Chicken, Spices, Onion, Mint\",\r\n  \"instructions\": \"Cook with extra spices and garnish with mint.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/recipes/69cad7df54aa9a7b5a8484a5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "recipes",
+            "69cad7df54aa9a7b5a8484a5"
+          ]
+        },
+        "description": "Updates an existing recipe by its ID.\n\nURL Parameter:\n\n- id (String): Unique identifier of the recipe\n    \n\nRequest Body:\n\n- title (String): Updated recipe name\n    \n- ingredients (String): Updated ingredients\n    \n- instructions (String): Updated preparation steps\n    \n\nResponse:\n\n- Returns the updated recipe object.\n    \n\nStatus Codes:\n\n- 200: Recipe updated successfully\n    \n- 500: Server error"
+      },
+      "response": [
+        {
+          "name": "Update recipe",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Chicken Biryani Special\",\r\n  \"ingredients\": \"Rice, Chicken, Spices, Onion, Mint\",\r\n  \"instructions\": \"Cook with extra spices and garnish with mint.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/recipes/69cad7df54aa9a7b5a8484a5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recipes",
+                "69cad7df54aa9a7b5a8484a5"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "268"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"10c-xCL9Sz0szuumIbC0z/+65GfVs6w\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 30 Mar 2026 20:26:23 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"_id\": \"69cad7df54aa9a7b5a8484a5\",\n    \"title\": \"Chicken Biryani Special\",\n    \"ingredients\": \"Rice, Chicken, Spices, Onion, Mint\",\n    \"instructions\": \"Cook with extra spices and garnish with mint.\",\n    \"createdAt\": \"2026-03-30T20:06:55.289Z\",\n    \"updatedAt\": \"2026-03-30T20:26:23.089Z\",\n    \"__v\": 0\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete recipe",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/recipes/69cad99554aa9a7b5a8484a7",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "recipes",
+            "69cad99554aa9a7b5a8484a7"
+          ]
+        },
+        "description": "Deletes a recipe from the database using its ID.\n\nURL Parameter:\n\n- id (String): Unique identifier of the recipe\n    \n\nResponse:\n\n- Returns a success message confirming deletion.\n    \n\nStatus Codes:\n\n- 200: Recipe deleted successfully\n    \n- 500: Server error"
+      },
+      "response": [
+        {
+          "name": "Delete recipe",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/recipes/69cad99554aa9a7b5a8484a7",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recipes",
+                "69cad99554aa9a7b5a8484a7"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "34"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"22-oOJrBJyyGFYVIpRp+CKZEFg6p8Q\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 30 Mar 2026 20:27:56 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Deleted successfully\"\n}"
+        }
+      ]
+    }
+  ]
+}
